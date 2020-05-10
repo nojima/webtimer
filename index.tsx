@@ -26,20 +26,17 @@ type Action = Increment | Decrement;
 
 //-----------------------------------------------------------------------------
 
-function update(state: State | undefined, action: Action): State {
-    if (state == null) {
-        return initialState;
-    }
-
+function update(state: State = initialState, action: Action): State {
     switch (action.type) {
         case "INCREMENT":
             return { count: state.count + 1 };
 
         case "DECREMENT":
             return { count: state.count - 1 };
-    }
 
-    console.error("unknown action", action);
+        default:
+            return state;
+    }
 }
 
 //-----------------------------------------------------------------------------
@@ -50,7 +47,7 @@ type CounterProps = {
     onDecrement: () => void;
 };
 
-function Counter(props: CounterProps) {
+function Counter(props: CounterProps): JSX.Element {
     return (
         <div className="Counter">
             <div className="Counter__Value">{props.value}</div>
@@ -62,18 +59,24 @@ function Counter(props: CounterProps) {
     );
 }
 
-function render(): void {
-    console.log(store.getState());
-    ReactDOM.render(
+function Main(props: { state: State }): JSX.Element {
+    const state = props.state;
+    return (
         <div className="Main">
             <div className="Main__Counter">
                 <Counter
-                    value={store.getState().count}
+                    value={state.count}
                     onIncrement={() => store.dispatch({ type: "INCREMENT" }) }
                     onDecrement={() => store.dispatch({ type: "DECREMENT" }) }
                 />
             </div>
-        </div>,
+        </div>
+    );
+}
+
+function render(): void {
+    ReactDOM.render(
+        <Main state={store.getState()} />,
         rootElement
     );
 }
