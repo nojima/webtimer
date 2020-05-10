@@ -1,0 +1,41 @@
+@import "./reset.css";
+@import "./base.css";
+
+.Main {
+    padding-top: 1rem;
+
+    &__Counter {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+}
+
+.Counter {
+    background-color: #999;
+
+    &__Value {
+        color: white;
+        font-weight: bold;
+        font-size: 10rem;
+        line-height: 150%;
+        text-align: center;
+    }
+
+    &__Controls {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__Plus {
+        display: block;
+        width: 50%;
+        font-size: 2rem;
+    }
+
+    &__Minus {
+        display: block;
+        width: 50%;
+        font-size: 2rem;
+    }
+}

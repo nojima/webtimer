@@ -52,10 +52,12 @@ type CounterProps = {
 
 function Counter(props: CounterProps) {
     return (
-        <div className="counter">
-            <div className="counter--value">{props.value}</div>
-            <button className="counter-plus" onClick={props.onIncrement}>+</button>
-            <button className="counter-minus" onClick={props.onDecrement}>-</button>
+        <div className="Counter">
+            <div className="Counter__Value">{props.value}</div>
+            <div className="Counter__Controls">
+                <button className="Counter__Plus" onClick={props.onIncrement}>＋</button>
+                <button className="Counter__Minus" onClick={props.onDecrement}>－</button>
+            </div>
         </div>
     );
 }
@@ -63,11 +65,15 @@ function Counter(props: CounterProps) {
 function render(): void {
     console.log(store.getState());
     ReactDOM.render(
-        <Counter
-            value={store.getState().count}
-            onIncrement={() => store.dispatch({ type: "INCREMENT" }) }
-            onDecrement={() => store.dispatch({ type: "DECREMENT" }) }
-        />,
+        <div className="Main">
+            <div className="Main__Counter">
+                <Counter
+                    value={store.getState().count}
+                    onIncrement={() => store.dispatch({ type: "INCREMENT" }) }
+                    onDecrement={() => store.dispatch({ type: "DECREMENT" }) }
+                />
+            </div>
+        </div>,
         rootElement
     );
 }
