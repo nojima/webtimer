@@ -61,6 +61,26 @@ function Counter(props: CounterProps): JSX.Element {
     );
 }
 
+type TimeDisplayProps = {
+    minutes: number;
+    seconds: number;
+};
+
+function TimeDisplay(props: TimeDisplayProps): JSX.Element {
+    return (
+        <div className="TimeDisplay">
+            <div className="TimeDisplay__Minutes">
+                <span className="TimeDisplay__MinutesValue">{props.minutes}</span>
+                <span className="TimeDisplay__MinutesLabel">min.</span>
+            </div>
+            <div className="TimeDisplay__Seconds">
+                <span className="TimeDisplay__SecondsValue">{props.seconds}</span>
+                <span className="TimeDisplay__SecondsLabel">sec.</span>
+            </div>
+        </div>
+    );
+}
+
 function Main(props: { state: State }): JSX.Element {
     const state = props.state;
     return (
@@ -71,6 +91,9 @@ function Main(props: { state: State }): JSX.Element {
                     onIncrement={() => store.dispatch({ type: "INCREMENT" }) }
                     onDecrement={() => store.dispatch({ type: "DECREMENT" }) }
                 />
+            </div>
+            <div className="Main__TimeDisplay">
+                <TimeDisplay minutes={3} seconds={29} />
             </div>
         </div>
     );
