@@ -2,75 +2,75 @@
 @import "./base.css";
 
 .Main {
-    padding-top: 1rem;
+  padding-top: 1rem;
 
-    &__Counter {
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-    }
+  &__Counter {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
 
-    &__TimeDisplay {
-        margin-left: auto;
-        margin-right: auto;
-        width: 720px;
-    }
+  &__TimeDisplay {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+  }
 }
 
 .Counter {
-    background-color: #999;
+  background-color: #999;
 
-    &__Value {
-        color: white;
-        font-weight: bold;
-        font-size: 10rem;
-        line-height: 150%;
-        text-align: center;
-    }
+  &__Value {
+    color: white;
+    font-weight: bold;
+    font-size: 10rem;
+    line-height: 150%;
+    text-align: center;
+  }
 
-    &__Controls {
-        display: flex;
-        justify-content: center;
-    }
+  &__Controls {
+    display: flex;
+    justify-content: center;
+  }
 
-    &__Plus {
-        display: block;
-        width: 50%;
-        font-size: 2rem;
-    }
+  &__Plus {
+    display: block;
+    width: 50%;
+    font-size: 2rem;
+  }
 
-    &__Minus {
-        display: block;
-        width: 50%;
-        font-size: 2rem;
-    }
+  &__Minus {
+    display: block;
+    width: 50%;
+    font-size: 2rem;
+  }
 }
 
 .TimeDisplay {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    color: #444;
+  color: #444;
 
-    &__Minutes {
-        width: 50%;
-        text-align: right;
-        padding-right: 1rem;
-    }
+  &__Minutes {
+    width: 50%;
+    text-align: right;
+    padding-right: 1rem;
+  }
 
-    &__Seconds {
-        width: 50%;
-        text-align: left;
-        padding-left: 1rem;
-    }
+  &__Seconds {
+    width: 50%;
+    text-align: left;
+    padding-left: 1rem;
+  }
 
-    &__MinutesValue, &__SecondsValue {
-        font-size: 10rem;
-        font-weight: bold;
-    }
+  &__MinutesValue, &__SecondsValue {
+    font-size: 10rem;
+    font-weight: bold;
+  }
 
-    &__MinutesLabel, &__SecondsLabel {
-        font-size: 2rem;
-        font-weight: bold;
-    }
+  &__MinutesLabel, &__SecondsLabel {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
