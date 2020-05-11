@@ -1,5 +1,13 @@
 {
     "compilerOptions": {
-        "jsx": "react"
+        "sourceMap": true,
+        "target": "es5",
+        "module": "es2015",
+        "jsx": "react",
+        "moduleResolution": "node",
+        "lib": [
+            "ES2020",
+            "DOM"
+        ]
     }
 }
